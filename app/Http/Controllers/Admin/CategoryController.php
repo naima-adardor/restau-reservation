@@ -29,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -40,7 +40,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $image=$request->file('image')->store('public/categories');
+      Category::create([
+        'name'=>$request->name,
+        'description'=>$request->description,
+        'image'=>$image
+      ]);
+return to_route('admin.categories.index');
     }
 
     /**
