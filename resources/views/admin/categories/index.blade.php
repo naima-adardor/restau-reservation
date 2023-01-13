@@ -13,7 +13,7 @@
     </a>
    </div>   
    <div class="flex flex-col">
-<div class="relative overflow-x-auto">
+<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -23,7 +23,7 @@
                 <th scope="col" class="px-6 py-3">
                     Image
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-3 ">
                    Description
                 </th>
                 
@@ -44,7 +44,7 @@
                 <td class="px-6 py-4">
                     {{ $category->description}}
                     </td>
-                <td class="px-6 py-4">
+                <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"">
                     <div class="flex space-x-2">
                  <a href="{{ route('admin.categories.edit',$category->id) }}" class="px-4 py-2 bg-green-200 hover:bg-green-300  rounded-lg text-black">
                     Edit

@@ -101,6 +101,7 @@ class CategoryController extends Controller
             'description' => $request->description,
             'image' => $image
         ]);
+        return to_route('admin.categories.index');
     }
 
     /**
@@ -109,8 +110,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        Storage::delete($category->image);
+        $category->delete();
+        return to_route('admin.categories.index');
     }
 }
