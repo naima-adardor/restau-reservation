@@ -44,7 +44,7 @@ class TableController extends Controller
             'status'=>$request->status,
             'location'=>$request->location,
         ]);
-        return to_route('admin.tables.index');
+        return to_route('admin.tables.index')->with('success','Table created successfully');
         
     }
 
@@ -65,10 +65,11 @@ class TableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Table $table)
     {
-        //
+        return view('admin.tables.edit',compact('table'));
     }
+   
 
     /**
      * Update the specified resource in storage.
@@ -77,9 +78,13 @@ class TableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TableStoreRequest $request,Table $table)
     {
-        //
+        
+        $table->update($request->validated());
+          
+    
+        return to_route('admin.tables.index')->with('success','Table updated successfully');
     }
 
     /**
@@ -88,8 +93,12 @@ class TableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Table $table)
     {
-        //
-    }
+
+        $table->delete();
+        $table->reservations()->delete();
+        return to_route('admin.tables.index')->with('danger','Table deleted successfully');
+         }
+
 }
