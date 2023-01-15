@@ -7,6 +7,11 @@ use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\FrontendCategoryController;
+use App\Http\Controllers\Frontend\FrontendMenuController;
+use App\Http\Controllers\Frontend\FrontendReservationController;
+use App\Http\Controllers\Frontend\WelcomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +24,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[WelcomeController::class,'index']);
+
+
+Route::get('/categories',[FrontendCategoryController::class,'index'])->name('categories.index');
+Route::get('/menus',[FrontendMenuController::class,'index'])->name('menus.index');
+Route::get('/reservation/step-one',[FrontendReservationController::class,'stepOne'])->name('reservations.step.one');
+Route::get('/reservation/step-two',[FrontendReservationController::class,'stepTwo'])->name('reservations.step.two');
+Route::get('/categories/{category}',[FrontendCategoryController::class,'show'])->name('categories.show');
+Route::post('/reservation/step-one',[FrontendReservationController::class,'StorestepOne'])->name('reservations.store.step.one');
+Route::post('/reservation/step-two',[FrontendReservationController::class,'StorestepTwo'])->name('reservations.store.step.two');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
