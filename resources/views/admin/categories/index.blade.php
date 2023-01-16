@@ -26,7 +26,9 @@
                 <th scope="col" class="px-6 py-3 ">
                    Description
                 </th>
-                
+                <th scope="col" class="relative py-3 px-6">
+                    <span class="sr-only">Edit</span>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -44,7 +46,7 @@
                 <td class="px-6 py-4">
                     {{ $category->description}}
                     </td>
-                <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"">
+                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
                     <div class="flex space-x-2">
                  <a href="{{ route('admin.categories.edit',$category->id) }}" class="px-4 py-2 bg-green-200 hover:bg-green-300  rounded-lg text-black">
                     Edit

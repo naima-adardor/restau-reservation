@@ -29,6 +29,9 @@
                 <th scope="col" class="px-6 py-3">
                     Location
                 </th>
+                <th scope="col" class="relative py-3 px-6">
+                    <span class="sr-only">Edit</span>
+                </th>
             </tr>
         </thead>
         <tbody>
