@@ -34,6 +34,8 @@ Route::get('/reservation/step-two',[FrontendReservationController::class,'stepTw
 Route::get('/categories/{category}',[FrontendCategoryController::class,'show'])->name('categories.show');
 Route::post('/reservation/step-one',[FrontendReservationController::class,'StorestepOne'])->name('reservations.store.step.one');
 Route::post('/reservation/step-two',[FrontendReservationController::class,'StorestepTwo'])->name('reservations.store.step.two');
+Route::get('/thankyou',[WelcomeController::class,'thankyou'])->name('thankyou');
+Route::get('/about',[WelcomeController::class,'about'])->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -42,7 +42,7 @@
 
                         </p>
                         <div class="relative flex">
-                            <a href="#_"
+                            <a href="{{ route('about') }}"
                                 class="flex items-center w-full px-6 py-3 mb-3 text-lg bg-bl-600  sm:mb-0  text-blue-900 bg-blue-200 rounded-full  md:w-auto hover:bg-blue-900 hover:text-blue-200 focus:outline-none sm:w-auto">
                                 Read More
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24"

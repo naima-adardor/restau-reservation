@@ -5,7 +5,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="h-32 md:h-auto md:w-1/2">
                         <img class="object-cover w-full h-full"
-                            src="https://cdn.pixabay.com/photo/2021/01/15/17/01/green-5919790__340.jpg" alt="img" />
+                            src="{{ asset('') }}" alt="img" />
                     </div>
                     <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
                         <div class="w-full">
@@ -13,8 +13,8 @@
 
                             <div class="w-full bg-gray-200 rounded-full">
                                 <div
-                                    class="w-40 p-1 text-xs font-medium leading-none text-center text-blue-100 bg-blue-600 rounded-full">
-                                    Step1</div>
+                                    class="w-40 p-1 text-xs  leading-none text-center font-bold text-blue-100 bg-blue-600 rounded-full">
+                                    Step 1</div>
                             </div>
 
                             <form method="POST" action="{{ route('reservations.store.step.one') }}">
@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="mt-6 p-4 flex justify-end">
                                     <button type="submit"
-                                        class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Next</button>
+                                        class="px-4 py-2 font-bold bg-blue-200 hover:bg-blue-900 hover:text-blue-200 rounded-lg text-blue-900">Next</button>
                                 </div>
                             </form>
                         </div>
