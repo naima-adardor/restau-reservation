@@ -1,6 +1,6 @@
-<x-guest-layout>
-    <div class="container max-w-lg px-4 py-32 mx-auto text-left bg-center bg-no-repeat bg-cover md:max-w-none md:text-center"
-        style="background-image: url('https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg')">
+<x-guest-layout style="margin-top:-120px" >
+    <div  class="container max-w-lg px-4 py-32 mx-auto text-left  bg-center bg-no-repeat bg-cover md:max-w-none md:text-center"
+        style="background-image: url('images/cover.png');margin-top:-120px ">
         <h1
             class="font-mono text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-800 md:text-2xl hover:text-blue-400 md:text-center sm:leading-none lg:text-5xl">
             <span class="inline md:block">Welcome To MasterFood Restaurant</span>
@@ -33,11 +33,8 @@
                         <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
                            Our restaurant is a family owned and operated restaurant that has been serving the community for over 20 years.
                             We are proud to be a part of the community and look forward to serving you for many years to come.
-                            we make sure that our customers are satisfied with our food and service.
-                            we have a wide variety of food to choose from.
-                            you can choose from our menu or you can order from our daily specials.
-                            we also have a wide variety of drinks to choose from.
-                            the most important things is the health and safety of our customers and employees.
+                            we make sure that our customers are satisfied with our food and service...
+                        
         
 
                         </p>
@@ -147,60 +144,42 @@
     <section class="pt-4 pb-12 bg-gray-800">
         <div class="my-16 text-center">
             <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-                Testimonial </h2>
-            <p class="text-xl text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. soluta sapient</p>
+               Our Team </h2>
+            <p class="text-xl text-white">A good team can itself be the secret of success</p>
         </div>
         <div class="grid gap-2 lg:grid-cols-3">
             <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
                 <div class="flex justify-center -mt-16 md:justify-end">
                     <img class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full"
-                        src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
+                        src="/images/chef1.png">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-semibold text-gray-800">Food</h2>
-                    <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores
-                        deserunt
-                        ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis
-                        pariatur
-                        minus consequuntur!</p>
+                    <h2 class="text-3xl font-semibold text-gray-800">Mohammed</h2>
+                    <p class="mt-2 text-gray-600">became known to the general public by participating in the twelfth season of Top chef. Accompanied by chef Hélène Darroze throughout the famous culinary competition of M6, he was able to prove to the various guests, to the jury and even to his comrades, that he had his place. Moreover, he climbed to the final against Sarah Mainguy… and won the edition hands down! And since, it is the consecration. But many years before that, Mohamed Cheikh worked hard in the kitchen. On social networks, he shares Tuesday August 2, 2022 old photos of his beginnings in the middle. And the least we can say is that he is unrecognizable!</p>
                 </div>
-                <div class="flex justify-end mt-4">
-                    <a href="#" class="text-xl font-medium text-blue-500">John Doe</a>
-                </div>
+               
             </div>
             <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
                 <div class="flex justify-center -mt-16 md:justify-end">
                     <img class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full"
-                        src="https://cdn.pixabay.com/photo/2018/01/04/21/15/young-3061652__340.jpg">
+                        src="images/chef2.png">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-semibold text-gray-800">Food</h2>
-                    <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores
-                        deserunt
-                        ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis
-                        pariatur
-                        minus consequuntur!</p>
+                    <h2 class="text-3xl font-semibold text-gray-800">Ibrahim</h2>
+                    <p class="mt-2 text-gray-600">became known to the general public by participating in the twelfth season of Top chef. Accompanied by chef Hélène Darroze throughout the famous culinary competition of M6, he was able to prove to the various guests, to the jury and even to his comrades, that he had his place. Moreover, he climbed to the final against Sarah Mainguy… and won the edition hands down! And since, it is the consecration. But many years before that, Mohamed Cheikh worked hard in the kitchen. On social networks, he shares Tuesday August 2, 2022 old photos of his beginnings in the middle. And the least we can say is that he is unrecognizable!</p>
                 </div>
-                <div class="flex justify-end mt-4">
-                    <a href="#" class="text-xl font-medium text-blue-500">John Doe</a>
-                </div>
+              
             </div>
             <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
                 <div class="flex justify-center -mt-16 md:justify-end">
                     <img class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full"
-                        src="https://cdn.pixabay.com/photo/2018/01/18/17/48/purchase-3090818__340.jpg">
+                        src="/images/chef3.png">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-semibold text-gray-800">Food</h2>
-                    <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores
-                        deserunt
-                        ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis
-                        pariatur
-                        minus consequuntur!</p>
+                    <h2 class="text-3xl font-semibold text-gray-800">Naima</h2>
+                    <p class="mt-2 text-gray-600">She's from Rabat. Later, she left Morocco after her scientific degree to achieve her goal : to learn cooking. Thus, the dream become true. Then, she takes courses at Paul Bocuse Institute and then she’s been to the most prestigious Palaces. From The Magestic in Cannes, to The Crillon at Paris, her success story has begun with famous chefs. In 2002, she came back to Morocco</p>
                 </div>
-                <div class="flex justify-end mt-4">
-                    <a href="#" class="text-xl font-medium text-blue-500">John Doe</a>
-                </div>
+               
             </div>
         </div>
     </section>

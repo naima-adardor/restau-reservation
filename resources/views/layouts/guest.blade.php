@@ -13,16 +13,18 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdn.tailwindcss.com"></script>
+        <base href="/public">
     </head>
     <body>
        
-        <div class="bg-white shadow-md" x-data="{ isOpen: false }">
-            <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
+        <div class="bg-transparent " x-data="{ isOpen: false }" style="margin-top:0px" >
+            <nav class="container px-6 py-6 mx-auto md:flex md:justify-between md:items-center">
                 <div class="flex items-center justify-between">
-                    <a class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-800 md:text-2xl hover:text-blue-400"
-                        href="/">
+                    <a class="flex text-xl  font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-800 md:text-2xl hover:text-blue-400"
+                        href="/"><img src="images/logo.png" alt="IMG-LOGO" style="width: 80px;heigh:60px;margin-top:-20px">
                         MasterFood
                     </a>
+                   
                     <!-- Mobile menu button -->
                     <div @click="isOpen = !isOpen" class="flex md:hidden">
                         <button type="button"
@@ -52,7 +54,8 @@
                 </div>
             </nav>
         </div>
-            <div class="font-sans text-gray-900 antialiased min-h-screen">
+            <div class="font-sans text-gray-900 antialiased min-h-screen"
+            >
                 {{ $slot }}
             </div>
             <footer class="bg-gray-800 border-t border-gray-200">

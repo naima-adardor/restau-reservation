@@ -5,7 +5,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="h-32 md:h-auto md:w-1/2">
                         <img class="object-cover w-full h-full"
-                            src="{{ asset('') }}" alt="img" />
+                            src="images/chef.png" alt="img" />
                     </div>
                     <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
                         <div class="w-full">
