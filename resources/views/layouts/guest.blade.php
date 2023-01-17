@@ -9,11 +9,10 @@
         <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}"/>
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Scripts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdn.tailwindcss.com"></script>
-        <base href="/public">
+      <base href="/public">
     </head>
     <body>
        
@@ -43,7 +42,7 @@
                 <div :class="isOpen ? 'flex' : 'hidden'"
                     class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
                     <a class="text-transparent bg-clip-text font-bold bg-blue-300  hover:text-blue-400"
-                        href="/">Home</a>
+                        href="/">Home </a>
                     <a class="text-transparent bg-clip-text font-bold bg-blue-300  hover:text-blue-400"
                         href="{{route('categories.index' ) }}">Categories</a>
                     <a class="text-transparent bg-clip-text font-bold bg-blue-300  hover:text-blue-400"
@@ -53,15 +52,43 @@
                     @guest
                     @if (Route::has('register')||Route::has('login'))
                     
-                    <a class="text-transparent bg-clip-text font-bold bg-blue-900  hover:text-blue-700"
+                    {{-- <a class="text-transparent bg-clip-text font-bold bg-blue-900  hover:text-blue-700"
                     href="{{route( 'login') }}" >
                  {{ __('Login') }}
                     </a>
                     <a class="text-transparent bg-clip-text font-bold bg-blue-900  hover:text-blue-700"
                     href="{{route( 'register') }}" >
                         {{ __('Register') }}
-                           </a>
-
+                           </a> --}}
+                           <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                            <button @click="open = !open"
+                                class="text-transparent bg-clip-text font-bold  bg-blue-200  hover:text-blue-200">
+                                <i class="fas fa-user" style="font-size:20px; color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
+                                     <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                                    class="inline w-8 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                                x-transition:enter-start="transform opacity-0 scale-95"
+                                x-transition:enter-end="transform opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75"
+                                x-transition:leave-start="transform opacity-100 scale-100"
+                                x-transition:leave-end="transform opacity-0 scale-95"
+                                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+                                <div class="px-0 py-2 w-full bg-white rounded-md shadow dark:bg-gray-700">
+                                 
+    
+                            <x-nav-link :href="route('login')"   class="block px-0 w-full py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-blue-300 focus:text-gray-900  focus:outline-none focus:shadow-outline"
+                                :active="request()->routeIs('login')">
+                                {{ __('Login') }}
+                            </x-nav-link>
+                            <x-nav-link :href="route('register')"   class="block px-0 w-full py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-blue-300 focus:text-gray-900  focus:outline-none focus:shadow-outline"
+                            :active="request()->routeIs('register')">
+                            {{ __('Register') }}
+                        </x-nav-link>
                            
                             
                       
@@ -73,7 +100,7 @@
 
                       <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="text-transparent bg-clip-text font-bold bg-blue-900  hover:text-blue-700">
+                        class="text-transparent bg-clip-text font-bold bg-purple-900  hover:text-purple-900">
                         <span>{{ Auth::user()->name }}</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                             class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
@@ -93,11 +120,19 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();"
-                                    class="block px-1 w-full py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-blue-300 focus:text-gray-900  focus:outline-none focus:shadow-outline">
-                                    {{ __('LogOut') }}
-                                </x-dropdown-link>
+                             
+                                <x-nav-link :href="route('logout')"    onclick="event.preventDefault();
+                                this.closest('form').submit();" class="block px-0 w-full py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-blue-300 focus:text-gray-900  focus:outline-none focus:shadow-outline"
+                                >
+                                {{ __('LogOut') }}
+                            </x-nav-link>
+                                 @if (Auth::user()->is_admin)
+                    <x-nav-link :href="route('admin.index')"   class="block px-0 w-full py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-blue-300 focus:text-gray-900  focus:outline-none focus:shadow-outline"
+                        :active="request()->routeIs('admin.index')">
+                        {{ __('Dashbord') }}
+                    </x-nav-link>
+                 
+                    @endif
                             </form>
                         </div>
                     </div>

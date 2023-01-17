@@ -2,10 +2,10 @@
     <div  class="container max-w-lg px-4 py-32 mx-auto text-left  bg-center bg-no-repeat bg-cover md:max-w-none md:text-center"
         style="background-image: url('images/cover.png');margin-top:-120px ">
         <h1
-            class="font-mono text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-800 md:text-2xl hover:text-blue-400 md:text-center sm:leading-none lg:text-5xl">
+            class="font-mono text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-800 md:text-2xl hover:text-blue-400 md:text-center sm:leading-none lg:text-5xl">
             <span class="inline md:block">Welcome To MasterFood Restaurant</span>
         </h1>
-        <div class="mx-auto mt-2  shadow-black font-bold md:text-center lg:text-lg">
+        <div class="mx-auto mt-2 text-white shadow-gray-600 font-medium md:text-center lg:text-lg">
             Master Food Restaurant is a family owned and operated restaurant that has been serving the community for over 20 years.
          We are proud to be a part of the community and look forward to serving you for many years to come.
         </div>
