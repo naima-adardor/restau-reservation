@@ -1,20 +1,21 @@
 <x-guest-layout>
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-auth-session-status class="mb-4" :status="session('status')"  />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" style="margin-top: 100px " >
         @csrf
-
+        <div class="p-4 rounded shadow-lg ring ring-pink-300/50"style="margin-left:30%;margin-right:30% ;background-image:url('/images/back.png');background-repeat:no-repeat;background-size: cover;">
         <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+        <div class="mt-4" >
+            <x-input-label  class="text-blue-200 font-bold" for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full"
+             type="email" name="email" :value="old('email')" required autofocus />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label class="text-blue-200 font-bold"  for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -25,7 +26,7 @@
         </div>
 
         <!-- Remember Me -->
-        <div class="block mt-4">
+        <div class="mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
                 <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
@@ -39,9 +40,10 @@
                 </a>
             @endif
 
-            <x-primary-button class="ml-3">
+            <button class="px-4 py-2 font-bold bg-blue-200 hover:bg-blue-900 hover:text-blue-200 rounded-lg text-blue-900">
                 {{ __('Log in') }}
-            </x-primary-button>
+            <button>
+        </div>
         </div>
     </form>
 </x-guest-layout>

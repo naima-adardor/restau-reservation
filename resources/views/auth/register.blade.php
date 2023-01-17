@@ -1,24 +1,25 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+<x-guest-layout >
+    <form method="POST" action="{{ route('register') }}" style="margin-top: 100px">
         @csrf
-
+        <div class="p-4 rounded shadow-lg ring ring-pink-300/50"style="margin-left:30%;margin-right:30%;background-image:url('/images/back.png');background-repeat:no-repeat;background-size: cover;">
+       
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label class="text-blue-200 font-bold" for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
         <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label  class="text-blue-200 font-bold" for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label  class="text-blue-200 font-bold" for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
@@ -30,7 +31,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label  class="text-blue-200 font-bold" for="password_confirmation" :value="__('Confirm Password')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
@@ -44,9 +45,10 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4">
+            <button class="px-4 py-2 font-bold bg-blue-200 hover:bg-blue-900 hover:text-blue-200 rounded-lg text-blue-900">
                 {{ __('Register') }}
-            </x-primary-button>
+            <button>
         </div>
+    </div>
     </form>
 </x-guest-layout>

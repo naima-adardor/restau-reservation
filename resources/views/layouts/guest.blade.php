@@ -53,17 +53,17 @@
                     @guest
                     @if (Route::has('register')||Route::has('login'))
                     
-                    <button class="text-transparent bg-clip-text font-bold bg-blue-900  hover:text-blue-700">
-                    <span>Connect</span>
+                    <a class="text-transparent bg-clip-text font-bold bg-blue-900  hover:text-blue-700"
+                    href="{{route( 'login') }}" >
+                 {{ __('Login') }}
+                    </a>
+                    <a class="text-transparent bg-clip-text font-bold bg-blue-900  hover:text-blue-700"
+                    href="{{route( 'register') }}" >
+                        {{ __('Register') }}
+                           </a>
 
                            
-                             <x-dropdown-link class="text-transparent bg-clip-text font-bold bg-blue-300  hover:text-blue-400" href="{{ route('login') }}" >
-                                    {{ __('Login') }}
-                                              {{ __('Register') }}
-                                </x-dropdown-link>
-
-                               
-                    </button>
+                            
                       
 
 
@@ -107,8 +107,7 @@
                 </div>
             </nav>
         </div>
-            <div class="font-sans text-gray-900 antialiased min-h-screen"
-            >
+            <div class="font-sans text-gray-900 antialiased min-h-screen ">
                 {{ $slot }}
             </div>
             <footer class="bg-gray-800 border-t border-gray-200">
