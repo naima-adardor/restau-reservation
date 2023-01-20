@@ -36,6 +36,7 @@ Route::post('/reservation/step-one',[FrontendReservationController::class,'Store
 Route::post('/reservation/step-two',[FrontendReservationController::class,'StorestepTwo'])->name('reservations.store.step.two');
 Route::get('/thankyou',[WelcomeController::class,'thankyou'])->name('thankyou');
 Route::get('/about',[WelcomeController::class,'about'])->name('about');
+Route::post('/addcart/{id}',[FrontendMenuController::class,'addcart']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
