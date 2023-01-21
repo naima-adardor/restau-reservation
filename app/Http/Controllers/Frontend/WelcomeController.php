@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Cart;
 
 class WelcomeController extends Controller
 {
@@ -12,7 +14,9 @@ class WelcomeController extends Controller
     function index()
     {
         $specials=Category::where('name','specials')->first();
-        return view('welcome',compact('specials'));
+        $user_id=Auth::id();
+        $count=cart::where('user_id',$user_id)->count();
+        return view('welcome',compact('specials','user_id','count'));
     }
     public function thankyou()
     {

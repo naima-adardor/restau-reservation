@@ -49,6 +49,28 @@
                     href="{{route( 'menus.index') }}">Our Menu</a>
                     <a class="text-transparent bg-clip-text font-bold bg-blue-300  hover:text-blue-400"
                     href="{{route( 'reservations.step.one') }}" >Make Reservation</a>
+                   
+                        
+                    
+                    <a class="text-transparent bg-clip-text font-bold bg-blue-300  hover:text-blue-400"
+                    @auth
+                        href="{{ url('/showcart',Auth::user()->id) }}">
+                        <i class="fas fa-cart-shopping"  class="hover:text-blue-400" style="font-size:20px; color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
+   
+                    @endauth
+                    @guest
+                    href="{{ url('/') }}">
+                        <i class="fas fa-cart-shopping"  class="hover:text-blue-400" style="font-size:20px; color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
+                    @endguest
+                  {{-- @auth
+                [{{ $count }}]  
+                 @endauth
+                 @guest
+                    [0]
+                    @endguest
+                 --}} 
+                 </a>
+                  
                     @guest
                     @if (Route::has('register')||Route::has('login'))
                     
