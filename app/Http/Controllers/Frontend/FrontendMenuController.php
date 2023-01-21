@@ -41,9 +41,16 @@ class FrontendMenuController extends Controller
 } public function showcart(Request $request,$id)
   {
     $count=cart::where('user_id',$id)->count();
+    //get the id of the cart table
+    $data2=cart::select('*')->where('user_id',$id)->get();
     $data=Cart::where('user_id',$id)->join('menus','carts.menu_id','=','menus.id')->get();
-    return view('showcart',compact('count','data'));
+    return view('showcart',compact('count','data','data2'));
   }
-  
+  public function remove($id)
+  {
+    $cart=cart::find($id);
+    $cart->delete();
+    return redirect()->back();
+  }
 
 }

@@ -38,6 +38,7 @@ Route::get('/thankyou',[WelcomeController::class,'thankyou'])->name('thankyou');
 Route::get('/about',[WelcomeController::class,'about'])->name('about');
 Route::post('/addcart/{id}',[FrontendMenuController::class,'addcart']);
 Route::get('/showcart/{id}',[FrontendMenuController::class,'showcart']);
+Route::get('/remove/{id}',[FrontendMenuController::class,'remove']);
 
 
 Route::get('/dashboard', function () {
