@@ -38,24 +38,12 @@ class FrontendMenuController extends Controller
   {
     return redirect('/login');
   }
-} public function showcart()
+} public function showcart(Request $request,$id)
   {
-    $user_id=Auth::id();
-    $carts=Cart::where('user_id',$user_id)->get();
-    return view('showcart',compact('carts'));
+    $count=cart::where('user_id',$id)->count();
+    $data=Cart::where('user_id',$id)->join('menus','carts.menu_id','=','menus.id')->get();
+    return view('showcart',compact('count','data'));
   }
-  public function removecart($id)
-  {
-    $cart=Cart::find($id);
-    $cart->delete();
-    return redirect()->back();
-  }
-  public function updatecart(Request $request,$id)
-  {
-    $cart=Cart::find($id);
-    $cart->quantity=$request->quantity;
-    $cart->save();
-    return redirect()->back();
-  }
+  
 
 }

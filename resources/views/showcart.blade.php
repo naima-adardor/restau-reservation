@@ -2,19 +2,27 @@
     <div class="flex flex-col w-full items-center justify-center p-6 space-y-4 sm:p-10 dark:bg-gray-900 dark:text-gray-100">
         <h2 class="text-xl font-semibold">Your cart</h2>
         <ul class="flex flex-col divide-y divide-gray-700">
+            @foreach ($data as $item) 
+                
+            
             <li class="flex flex-col py-6 sm:flex-row sm:justify-between">
                 <div class="flex w-full space-x-2 sm:space-x-4">
-                    <img class="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Polaroid camera">
+                    <img class="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src="{{ Storage::url($item->image) }}" alt="Polaroid camera">
                     <div class="flex flex-col justify-between w-full pb-4">
                         <div class="flex justify-between w-full pb-2 space-x-2">
                             <div class="space-y-1">
-                                <h3 class="text-lg font-semibold leading-snug sm:pr-8">Polaroid camera</h3>
+                                <h3 class="text-lg font-semibold leading-snug sm:pr-8">{{ $item->name }}</h3>
                                
                             </div>
                             <div class="text-right">
-                                <p class="text-lg font-semibold">59.99€</p>
+                                <p class="text-lg font-semibold">{{ $item->price }}</p>
                            
                             </div>
+                           
+                        </div>
+                        <div class="text-center">
+                            <p class="text-lg font-semibold text-green-500">({{ $item->quantity }})</p>
+                       
                         </div>
                         <div class="flex text-sm items-center  justify-center divide-x">
                             <button type="button" class="flex items-center  justify-center  rounded-md px-2 py-2 border border-red-700">
@@ -32,7 +40,7 @@
                     </div>
                 </div>
             </li>
-            
+            @endforeach
         </ul>
         <div class="space-y-1 text-right">
             <p>Total amount:
