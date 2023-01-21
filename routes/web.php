@@ -37,7 +37,7 @@ Route::post('/reservation/step-two',[FrontendReservationController::class,'Store
 Route::get('/thankyou',[WelcomeController::class,'thankyou'])->name('thankyou');
 Route::get('/about',[WelcomeController::class,'about'])->name('about');
 Route::post('/addcart/{id}',[FrontendMenuController::class,'addcart']);
-Route::post('/showcart/{id}',[FrontendMenuController::class,'showcart']);
+Route::get('/showcart/{id}',[FrontendMenuController::class,'showcart']);
 
 
 Route::get('/dashboard', function () {

@@ -42,7 +42,7 @@ class FrontendMenuController extends Controller
   {
     $user_id=Auth::id();
     $carts=Cart::where('user_id',$user_id)->get();
-    return view('menus.cart',compact('carts'));
+    return view('showcart',compact('carts'));
   }
   public function removecart($id)
   {
