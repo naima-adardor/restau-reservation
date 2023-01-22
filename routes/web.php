@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\FrontendCategoryController;
 use App\Http\Controllers\Frontend\FrontendMenuController;
 use App\Http\Controllers\Frontend\FrontendReservationController;
 use App\Http\Controllers\Frontend\WelcomeController;
+use App\Http\Controllers\Admin\OrderController;
 
 
 /*
@@ -57,6 +58,8 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
      Route::resource('/menus',MenuController::class);
      Route::resource('/tables',TableController::class);
      Route::resource('/reservations',ReservationController::class);
+     Route::resource('/orders',OrderController::class);
+
 });
 
 require __DIR__.'/auth.php';
