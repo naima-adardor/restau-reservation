@@ -15,5 +15,13 @@ class OrderController extends Controller
         
         return view('admin.orders.index',compact('orders'));
     }
+    public function search(Request $request)
+    {
+        $search=$request->search;
+        $orders=Order::where('name','Like','%'.$search.'%')
+        ->orwhere('foodname','Like','%'.$search.'%')
+        ->get();
+         return view('admin.orders.index',compact('orders'));
+    }
 
 }

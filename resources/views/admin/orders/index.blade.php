@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <form action="{{ url('/search') }}" method="GET">
                 @csrf
-                <input type="text" class=" rounded-md  "name="search" placeholder="Search" >
+                <input type="text" class=" rounded-md  " name="search" placeholder="Search" >
                 <button type="submit" class="px-4 py-2 bg-indigo-200 hover:bg-blue-400  rounded-lg text-black"><i class="fas fa-search"></i></button>
             </form>
 

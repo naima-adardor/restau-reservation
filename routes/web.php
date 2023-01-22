@@ -41,7 +41,7 @@ Route::post('/addcart/{id}',[FrontendMenuController::class,'addcart']);
 Route::get('/showcart/{id}',[FrontendMenuController::class,'showcart']);
 Route::get('/remove/{id}',[FrontendMenuController::class,'remove']);
 Route::post('/orderconfirm',[FrontendMenuController::class,'orderconfirm']);
-
+Route::get('/search',[OrderController::class,'search']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -59,7 +59,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
      Route::resource('/tables',TableController::class);
      Route::resource('/reservations',ReservationController::class);
      Route::resource('/orders',OrderController::class);
-     Route::get('/search',[OrderController::class,'search']);
+   
     });
 
 require __DIR__.'/auth.php';
