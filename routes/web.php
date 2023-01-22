@@ -59,7 +59,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
      Route::resource('/tables',TableController::class);
      Route::resource('/reservations',ReservationController::class);
      Route::resource('/orders',OrderController::class);
-
-});
+     Route::get('/search',[OrderController::class,'search']);
+    });
 
 require __DIR__.'/auth.php';
