@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\Order;
 
 class FrontendMenuController extends Controller
 {
@@ -50,6 +51,23 @@ class FrontendMenuController extends Controller
   {
     $cart=cart::find($id);
     $cart->delete();
+    return redirect()->back();
+  }
+  public function orderconfirm(Request $request)
+  {
+   foreach($request->foodname as $key=>$foodname)
+   {
+    $data=new order;
+    $data->foodname=$foodname;
+    $data->foodquantity=$request->foodquantity[$key];
+    $data->foodprice=$request->foodprice[$key];
+    $data->name=$request->name;
+    $data->phonenumber=$request->phone;
+    $data->address=$request->address;
+    $data->save();
+
+
+   }
     return redirect()->back();
   }
 
