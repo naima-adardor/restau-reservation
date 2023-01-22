@@ -67,12 +67,55 @@
             <p class="text-sm text-gray-400">Not including taxes and shipping costs</p>
         </div>
         <div class="flex justify-end space-x-4" style="position:relative;top:-600px;">
-            <button type="button" class="px-6 py-2 border  border-violet-400 rounded-md  hover:border-violet-500">Back
+            <a  href='/'class="px-6 py-2 border  border-violet-400 rounded-md  hover:border-violet-500">Back
                 <span class="sr-only sm:not-sr-only">to shop</span>
-            </button>
-            <button type="button" class="px-6 py-2 border rounded-md  bg-purple-400 text-white hover:bg-purple-500 dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400">
+            </a>
+            <button type="button" id="order" class="px-6 py-2 border rounded-md  bg-purple-400 text-white hover:bg-purple-500 dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400">
                 <span class="sr-only sm:not-sr-only">Continue to</span>Checkout
             </button>
         </div>
+        <div id="appear" style="position:relative;top:-600px;display:none">
+        <div class="sm:col-span-6">
+            <label for="name" class="block text-sm font-medium text-gray-700">Name
+            </label>
+            <div class="mt-1">
+                <input type="text" id="name" name="name"
+                  placeholder="Enter your name"
+                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+            </div>
+            @error('name')
+                <div class="text-sm text-red-400">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="sm:col-span-6">
+            <label for="phone" class="block text-sm font-medium text-gray-700"> Last Name
+            </label>
+            <div class="mt-1">
+                <input type="number" id="phone" name="phone"
+                   placeholder="Enter your phone number"
+                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+            </div>
+            @error('phone')
+                <div class="text-sm text-red-400">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="sm:col-span-6">
+            <label for="address" class="block text-sm font-medium text-gray-700">Name
+            </label>
+            <div class="mt-1">
+                <input type="text" id="address" name="address"
+                  placeholder="Enter your address"
+                    class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+            </div>
+            @error('address')
+                <div class="text-sm text-red-400">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="sm:col-span-6 mt-4 ">
+            <input type="submit" value="Confirm" class="px-6 py-2  border rounded-md  bg-green-400 text-white hover:bg-green-500 dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400">
+            <button  id="close" class="px-6 py-2  border rounded-md border-red-500  text-black hover:border-red-700 dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400">
+            close</button>
+        </div>
+    </div>
     </div>
 </x-guest-layout>
